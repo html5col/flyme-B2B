@@ -1359,6 +1359,8 @@ div#main{
 .navbar{
   overflow: hidden;
 }
+
+
 #main .ads{
   margin:1rem auto;
   width: 100%;
@@ -1366,16 +1368,22 @@ div#main{
   padding: 2rem 0;
 
   background: url('../images/ads.png');
+  //background-size: 100% 100%;
+  background-size: contain;
+
   .ads_content{
     
     width:90%;
     margin:0 auto;
+
     h2,p{
       text-align:center;
+      color:rgb(71, 68, 68);
+
     }
     .btns{
       display: block;
-      text-align: center;      
+      text-align: center;   
     }
 
   }
