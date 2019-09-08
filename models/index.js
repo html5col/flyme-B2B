@@ -6,7 +6,7 @@ let db = config.db;
 
 
 //mongoose.connect(config.db, {
-mongoose.connect(`mongodb://${db.auth.user}:${db.auth.pass}@localhost:${db.auth.port}/${db.name}`, {
+mongoose.connect(`mongodb://${db.auth.user}:${db.auth.pass}@localhost:${db.port}/${db.name}`, {
   poolSize: 20,
   useCreateIndex: true,
   useNewUrlParser: true
