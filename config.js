@@ -2,7 +2,11 @@
  * config
  */
 
-var path = require('path');
+let path = require('path');
+let dbUsername = process.env.dbUsername;
+let dbPassword = process.env.dbPassword;
+let mongoPort = process.env.mongoPort || 27017;
+console.log(dbUsername, dbPassword,mongoPort);
 
 var config = {
   // debug 为 true 时，用于本地调试
@@ -35,8 +39,15 @@ var config = {
   cnzz_tracker_id: '',
 
   // mongodb 配置
-  db: 'mongodb://127.0.0.1/en',
-
+  db: {
+    name: 'en',
+    //uri: 'mongodb://127.0.0.1/',
+    auth: {
+      user: dbUsername || '',
+      pass: dbPassword || '',
+    },
+    port: mongoPort
+  }, 
   // redis 配置，默认是本地
   redis_host: '127.0.0.1',
   redis_port: 6379,

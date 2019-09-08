@@ -1,8 +1,12 @@
 var mongoose = require('mongoose');
 var config   = require('../config');
-var logger = require('../common/logger')
+var logger = require('../common/logger');
+let db = config.db;
 
-mongoose.connect(config.db, {
+
+
+//mongoose.connect(config.db, {
+mongoose.connect(`mongodb://${db.auth.user}:${db.auth.pass}@localhost:${db.auth.port}/${db.name}`, {
   poolSize: 20,
   useCreateIndex: true,
   useNewUrlParser: true
