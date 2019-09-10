@@ -370,7 +370,8 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(0, 0, 0, 0.5);
 }
 #fh5co-home, #fh5co-home .text-wrap {
-  height: 900px;
+  /* height: 900px; */
+  padding: 10rem 0 8rem 0;
 }
 #fh5co-home .text-wrap {
   display: table;
@@ -390,6 +391,9 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: .1em;
 }
 @media screen and (max-width: 768px) {
+  #fh5co-home, #fh5co-home .text-wrap {
+    padding: 7rem 0 5rem 0;
+  }  
   #fh5co-home .text-inner h1 {
     font-size: 30px;
   }

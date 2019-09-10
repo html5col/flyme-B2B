@@ -132,7 +132,8 @@ var config = {
   tabs: [
     ['share', '分享'],
     ['ask', '问答'],
-    ['feedback', '社区反馈']
+    ['feedback', '社区反馈'],
+    ['apply', '课程申请']
   ],
 
   // 极光推送

@@ -17,6 +17,7 @@ var topic = require('./controllers/topic');
 var reply = require('./controllers/reply');
 var rss = require('./controllers/rss');
 var staticController = require('./controllers/static');
+var en = require('./controllers/en');
 var auth = require('./middlewares/auth');
 var limit = require('./middlewares/limit');
 var github = require('./controllers/github');
@@ -30,11 +31,13 @@ var router = express.Router();
 // home page
 router.get('/', site.index);
 //forum
-router.get('/forum', site.forum);
+router.get('/bbs', site.bbs);
 // sitemap
 router.get('/sitemap.xml', site.sitemap);
 // mobile app download
-router.get('/app/download', site.appDownload);
+
+router.get('/learn/grammar', en.grammar);
+// router.get('/app/download', site.appDownload);
 
 // sign controller
 if (config.allow_sign_up) {
