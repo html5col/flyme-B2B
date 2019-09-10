@@ -1,28 +1,667 @@
-<%- partial('sidebar') %>
+<% layout('indexLayout.html') -%>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>135楼 &mdash; 专业的英语学习社区</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
 
-<div id="content">
-  <div class="panel">
-    <div class="header">
-      <% [['all', '全部'], ['good', '精华']].concat(tabs).forEach(function (pair) {
-        var value = pair[0];
-        var text = pair[1]; %>
-        <a href="<%= value ? '/?tab=' + value : '/' %>"
-          class="topic-tab <%= value === tab ? 'current-tab' : '' %>"><%= text %></a>
-      <% }) %>
-    </div>
-    <% if (typeof(topics) !== 'undefined' && topics.length > 0) { %>
-    <div class="inner no-padding">
-      <%- partial('topic/list', {
-      topics: topics,
-      pages: pages,
-      current_page: current_page,
-      base: '/'
-      }) %>
-    </div>
-    <% } else { %>
-    <div class="inner">
-      <p>无话题</p>
-    </div>
-    <% } %>
-  </div>
-</div>
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+<!-- 
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400" rel="stylesheet"> -->
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="/public/solid/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="/public/solid/css/icomoon.css">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="/public/solid/css/simple-line-icons.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="/public/solid/css/bootstrap.css">
+	<!-- Style -->
+	<link rel="stylesheet" href="/public/solid/css/style.css">
+
+
+	<!-- Modernizr JS -->
+	
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="libs/solid/js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+
+
+	<section id="fh5co-home" data-section="home" style="background-image: url(libs/solid/images/full_image_4.jpg);" data-stellar-background-ratio="0.5">
+		<div class="gradient"></div>
+		<div class="container">
+			<div class="text-wrap">
+				<div class="text-inner">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 text-center">
+							<!-- <h1 class="animate-box"><span class="big">Creativity</span> <br><span>requires the</span> <br><span class="medium">Courage</span><br><span>to let go of</span> <br> <span class="medium">Certainties.</span></h1> -->
+							<h1 class="animate-box">在 135楼 学习，学霸带路， 督促坚持，培养未来的英语高端人才</h1> 
+							<h2 class="animate-box">打造： <a href="#" target="_blank" title="Free HTML5 Bootstrap Templates" class="fh5co-link">专业八级名师 团队</a></h2>
+							<div class="call-to-action">
+								<a href="/" class="demo animate-box"><i class="icon-class"></i> 参加课程</a>
+								<a href="/forum" class="download animate-box"><i class="icon-download"></i> 学习论坛</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="fh5co-services" data-section="services">
+		<div class="fh5co-services">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 text-center">
+						<div class="box-services">
+							<div class="icon animate-box">
+								<span><i class="icon-chemistry"></i></span>
+							</div>
+
+							<div class="fh5co-post animate-box">
+									<h3>初高中语法课 | 语法知识详解</h3>
+									<p>线上或线下初高中英语语法班，主讲初高中语法知识。主讲人传奇人物英语八级孔明讲师。</p>
+						    </div>				
+
+						</div>
+
+						<div class="box-services">
+								<div class="icon animate-box">
+									<span><i class="icon-people"></i></span>
+								</div>
+								<div class="fh5co-post animate-box">
+										<h3>初高中语法课 | 方式</h3>	<p>由英语语法传奇人物，李氏语法创始人 Frank Lee 主讲；内容涉及中高考语法重难点，用理科的思维去理解语法，课堂力争做到：没有一个学生听不懂英语语法！</p>
+										<p>适合: 初高中学生或类似英语水平</p>	
+													
+										<!-- <p>线上服务为主，线下为辅。线上交流，加线下沙拉结合(线下已开通杭州，绍兴区域)。其它城市线下组织志愿者正在开通申请...</p> -->
+								</div>
+							</div>
+
+					</div>
+					<div class="col-md-4 text-center">
+						<div class="box-services">
+							<div class="icon animate-box">
+								<span><i class="icon-trophy"></i></span>
+							</div>
+							<div class="fh5co-post animate-box">
+									<h3>读写课程 | 阅读并翻译学习</h3>
+									<p>语言学习需要输入，只有在情景中才有意思。本课程要求每周坚持指导老师提供的原汁文段【来自欧美书籍杂志】学习</p>
+						    </div>
+						</div>
+
+						<div class="box-services">
+							<div class="icon animate-box">
+								<span><i class="icon-paper-plane"></i></span>
+							</div>
+
+							<div class="fh5co-post animate-box">
+									<h3>读写课程 | 方式 </h3>
+									<p>在情景中学习，有专业八级Frank Lee导师带领，固定时间提供一份原汁原味的文章，并学习。活动类似公益性质，只要坚持下来，不花一分钱并有奖金哦！！</p>
+									<p>适合: 至少初中以上水平</p>
+						    </div>
+
+							<!-- <div class="fh5co-post animate-box">
+									<h3>说 | 线下聚会</h3>
+									<p>拒绝哑巴英语，把英语说出来！并不时请native speaker做客聚会</p>
+						    </div>	 -->
+						</div>
+					</div>
+					<div class="col-md-4 text-center">
+
+
+					    <div class="box-services">
+							<div class="icon animate-box">
+								<span><i class="icon-energy"></i></i></span>
+							</div>
+							<div class="fh5co-post animate-box">
+									<h3>外教口语课程 | 外教特色小班</h3>
+									<p>触手可及的价格，每月固定时间线上聚会，和native speaker一起，把英语说出来！</p>
+								</div>							
+						</div>
+
+
+						<div class="box-services">
+							<div class="icon animate-box">
+								<span><i class="icon-screen-desktop"></i></span>
+							</div>
+							<div class="fh5co-post animate-box">
+								<h3>外教口语课程 | 方式</h3>
+								<p>固定时间线上聚会，拒绝哑巴英语，在国内提供国外的英语交流环境，并不时举办线下聚会【杭州/绍兴/上海】！</p>
+								<p>适合: 至少初中以上水平</p>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- <section id="fh5co-explore" data-section="explore">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="animate-box">Finished Work</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext animate-box">
+							<h3>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="fh5co-project">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="fh5co-portfolio animate-box">
+							<a href="#">
+								<div class="portfolio-entry" style="background-image: url(libs/solid/images/portfolio-1.jpg);">
+									<div class="desc">
+										<p>Solid Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									</div>
+								</div>
+								<div class="portfolio-text text-center">
+									<h3>Solid</h3>
+									<ul class="stuff">
+										<li><i class="icon-heart2"></i>200</li>
+										<li><i class="icon-eye2"></i>248</li>
+										<li><i class="icon-download"></i>240</li>
+									</ul>
+								</div> 
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="fh5co-portfolio animate-box">
+							<a href="#">
+								<div class="portfolio-entry" style="background-image: url(libs/solid/images/portfolio-2.jpg);">
+									<div class="desc">
+										<p>Solid Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									</div>
+								</div>
+								<div class="portfolio-text text-center">
+									<h3>Air</h3>
+									<ul class="stuff">
+										<li><i class="icon-heart2"></i>200</li>
+										<li><i class="icon-eye2"></i>248</li>
+										<li><i class="icon-download"></i>240</li>
+									</ul>
+								</div> 
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="fh5co-portfolio animate-box">
+							<a href="#">
+								<div class="portfolio-entry" style="background-image: url(libs/solid/images/portfolio-3.jpg);">
+									<div class="desc">
+										<p>Solid Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									</div>
+								</div>
+								<div class="portfolio-text text-center">
+									<h3>Black</h3>
+									<ul class="stuff">
+										<li><i class="icon-heart2"></i>200</li>
+										<li><i class="icon-eye2"></i>248</li>
+										<li><i class="icon-download"></i>240</li>
+									</ul>
+								</div> 
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="fh5co-portfolio animate-box">
+							<a href="#">
+								<div class="portfolio-entry" style="background-image: url(libs/solid/images/portfolio-4.jpg);">
+									<div class="desc">
+										<p>Solid Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									</div>
+								</div>
+								<div class="portfolio-text text-center">
+									<h3>Soon</h3>
+									<ul class="stuff">
+										<li><i class="icon-heart2"></i>200</li>
+										<li><i class="icon-eye2"></i>248</li>
+										<li><i class="icon-download"></i>240</li>
+									</ul>
+								</div> 
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="fh5co-portfolio animate-box">
+							<a href="#">
+								<div class="portfolio-entry" style="background-image: url(libs/solid/images/portfolio-5.jpg);">
+									<div class="desc">
+										<p>Solid Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									</div>
+								</div>
+								<div class="portfolio-text text-center">
+									<h3>Homestate</h3>
+									<ul class="stuff">
+										<li><i class="icon-heart2"></i>200</li>
+										<li><i class="icon-eye2"></i>248</li>
+										<li><i class="icon-download"></i>240</li>
+									</ul>
+								</div> 
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="fh5co-portfolio animate-box">
+							<a href="#">
+								<div class="portfolio-entry" style="background-image: url(libs/solid/images/portfolio-6.jpg);">
+									<div class="desc">
+										<p>Solid Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									</div>
+								</div>
+								<div class="portfolio-text text-center">
+									<h3>Words</h3>
+									<ul class="stuff">
+										<li><i class="icon-heart2"></i>200</li>
+										<li><i class="icon-eye2"></i>248</li>
+										<li><i class="icon-download"></i>240</li>
+									</ul>
+								</div> 
+							</a>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="fh5co-portfolio animate-box">
+							<a href="#">
+								<div class="portfolio-entry" style="background-image: url(libs/solid/images/portfolio-7.jpg);">
+									<div class="desc">
+										<p>Solid Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									</div>
+								</div>
+								<div class="portfolio-text text-center">
+									<h3>Soon</h3>
+									<ul class="stuff">
+										<li><i class="icon-heart2"></i>200</li>
+										<li><i class="icon-eye2"></i>248</li>
+										<li><i class="icon-download"></i>240</li>
+									</ul>
+								</div> 
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="fh5co-portfolio animate-box">
+							<a href="#">
+								<div class="portfolio-entry" style="background-image: url(libs/solid/images/portfolio-8.jpg);">
+									<div class="desc">
+										<p>Solid Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									</div>
+								</div>
+								<div class="portfolio-text text-center">
+									<h3>Homestate</h3>
+									<ul class="stuff">
+										<li><i class="icon-heart2"></i>200</li>
+										<li><i class="icon-eye2"></i>248</li>
+										<li><i class="icon-download"></i>240</li>
+									</ul>
+								</div> 
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="fh5co-portfolio animate-box">
+							<a href="#">
+								<div class="portfolio-entry" style="background-image: url(libs/solid/images/portfolio-9.jpg);">
+									<div class="desc">
+										<p>Solid Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									</div>
+								</div>
+								<div class="portfolio-text text-center">
+									<h3>Words</h3>
+									<ul class="stuff">
+										<li><i class="icon-heart2"></i>200</li>
+										<li><i class="icon-eye2"></i>248</li>
+										<li><i class="icon-download"></i>240</li>
+									</ul>
+								</div> 
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<div id="fh5co-counter-section" class="fh5co-counters">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 animate-box">
+						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-3 text-center">
+						<span class="fh5co-counter js-counter" data-from="0" data-to="3452" data-speed="5000" data-refresh-interval="50"></span>
+						<span class="fh5co-counter-label">Cups of Coffee</span>
+					</div>
+					<div class="col-md-3 text-center">
+						<span class="fh5co-counter js-counter" data-from="0" data-to="234" data-speed="5000" data-refresh-interval="50"></span>
+						<span class="fh5co-counter-label">Client</span>
+					</div>
+					<div class="col-md-3 text-center">
+						<span class="fh5co-counter js-counter" data-from="0" data-to="6542" data-speed="5000" data-refresh-interval="50"></span>
+						<span class="fh5co-counter-label">Projects</span>
+					</div>
+					<div class="col-md-3 text-center">
+						<span class="fh5co-counter js-counter" data-from="0" data-to="8687" data-speed="5000" data-refresh-interval="50"></span>
+						<span class="fh5co-counter-label">Finished Projects</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</section> -->
+	<!-- <section id="fh5co-testimony" data-section="testimony">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="animate-box"><span>我们的客户说：</span></h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext animate-box">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="testimony-entry animate-box">
+						<div class="feed-bubble">
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						</div>
+						<div class="author-img" style="background-image: url(libs/solid/images/user-1.jpg);"></div>
+						<span class="user">Randy White <br> <small>Bloger, Analyst</small></span>
+					</div>
+
+					<div class="testimony-entry animate-box">
+						<div class="feed-bubble">
+							<p>Vokalia and Consonantia, there live the blind texts Far far away, behind the word mountains</p>
+						</div>
+						<div class="author-img" style="background-image: url(libs/solid/images/user-2.jpg);"></div>
+						<span class="user">Randy White <br> <small>Bloger, Analyst</small></span>
+					</div>
+
+					<div class="testimony-entry animate-box">
+						<div class="feed-bubble">
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						</div>
+						<div class="author-img" style="background-image: url(libs/solid/images/user-4.jpg);"></div>
+						<span class="user">Randy White <br> <small>Bloger, Analyst</small></span>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="testimony-entry animate-box">
+						<div class="feed-bubble">
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Vokalia and Consonantia, there live the blind texts.</p>
+						</div>
+						<div class="author-img" style="background-image: url(libs/solid/images/user-3.jpg);"></div>
+						<span class="user">Randy White <br> <small>Bloger, Analyst</small></span>
+					</div>
+
+					<div class="testimony-entry animate-box">
+						<div class="feed-bubble">
+							<p>Far far away, behind the word mountains. Vokalia and Consonantia</p>
+						</div>
+						<div class="author-img" style="background-image: url(libs/solid/images/user-5.jpg);"></div>
+						<span class="user">Randy White <br> <small>Bloger, Analyst</small></span>
+					</div>
+
+					<div class="testimony-entry animate-box">
+						<div class="feed-bubble">
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						</div>
+						<div class="author-img" style="background-image: url(libs/solid/images/user-1.jpg);"></div>
+						<span class="user">Randy White <br> <small>Bloger, Analyst</small></span>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="testimony-entry animate-box">
+						<div class="feed-bubble">
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						</div>
+						<div class="author-img" style="background-image: url(libs/solid/images/user-6.jpg);"></div>
+						<span class="user">Randy White <br> <small>Bloger, Analyst</small></span>
+					</div>
+
+					<div class="testimony-entry animate-box">
+						<div class="feed-bubble">
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						</div>
+						<div class="author-img" style="background-image: url(libs/solid/images/user-3.jpg);"></div>
+						<span class="user">Randy White <br> <small>Bloger, Analyst</small></span>
+					</div>
+
+					<div class="testimony-entry animate-box">
+						<div class="feed-bubble">
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						</div>
+						<div class="author-img" style="background-image: url(libs/solid/images/user-4.jpg);"></div>
+						<span class="user">Randy White <br> <small>Bloger, Analyst</small></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> -->
+	
+	<!-- <section id="fh5co-pricing" data-section="pricing">
+		<section class="pricing-section bg-3">
+      	<div class="container">
+      		<div class="row">
+					<div class="col-md-12 section-heading text-center">
+						<h2 class="animate-box">Pricing</h2>
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 subtext animate-box">
+								<h3>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+      		<div class="row">
+      			<div class="col-md-4 text-center animate-box">
+      				<div class="pricing__item">
+	                    <h3 class="pricing__title">Startup</h3>
+	                    <div class="pricing__price"><span class="pricing_currency">$</span>9.90</div>
+	                    <p class="pricing__sentence">Small business solution</p>
+	                    <ul class="pricing__feature-list">
+	                        <li class="pricing__feature">Unlimited calls</li>
+	                        <li class="pricing__feature">Free hosting</li>
+	                        <li class="pricing__feature">40MB of storage space</li>
+	                    </ul>
+	                    <p><a href="#" class="btn btn-primary btn-lg pricing__action">Read More</a></p>
+	                </div>	
+      			</div>
+      			<div class="col-md-4 text-center animate-box">
+      				<div class="pricing__item">
+	                    <h3 class="pricing__title">Medium</h3>
+	                    <div class="pricing__price"><span class="pricing_currency">$</span>29,90</div>
+	                    <p class="pricing__sentence">Medium business solution</p>
+	                    <ul class="pricing__feature-list">
+	                        <li class="pricing__feature">Unlimited calls</li>
+	                        <li class="pricing__feature">Free hosting</li>
+	                        <li class="pricing__feature">10 hours of support</li>
+	                        <li class="pricing__feature">Social media integration</li>
+	                        <li class="pricing__feature">1GB of storage space</li>
+	                    </ul>
+	                    <p><a href="#" class="btn btn-primary btn-lg pricing__action">Read More</a></p>
+	                </div>
+      			</div>
+      			<div class="col-md-4 text-center animate-box">
+      				<div class="pricing__item">
+	                    <h3 class="pricing__title">Large</h3>
+	                    <div class="pricing__price"><span class="pricing_currency">$</span>59,90</div>
+	                    <p class="pricing__sentence">Gigantic business solution</p>
+	                    <ul class="pricing__feature-list">
+	                        <li class="pricing__feature">Unlimited calls</li>
+	                        <li class="pricing__feature">Free hosting</li>
+	                        <li class="pricing__feature">Unlimited hours of support</li>
+	                        <li class="pricing__feature">Social media integration</li>
+	                        <li class="pricing__feature">Anaylitcs integration</li>
+	                        <li class="pricing__feature">Unlimited storage space</li>
+	                    </ul>
+	                    <p><a href="#" class="btn btn-primary btn-lg pricing__action">Read More</a></p>
+	                </div>
+      			</div>
+      		</div>
+      	</div>
+     </section>
+	</section>	 -->
+
+	<!-- <section id="fh5co-blog" data-section="blog">
+		<div class="fh5co-blog">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 section-heading text-center">
+						<h2 class="animate-box"><span>Read Our Blog</span></h2>
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 subtext">
+								<h3 class="animate-box">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove. </h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 animate-box blog">
+						<a href="#" class="entry">
+							<div class="blog-bg" style="background-image: url(libs/solid/images/blog-1.jpg);">
+								<div class="date">
+									<span>03</span>
+									<small>Mar</small>
+								</div>
+								<div class="desc">
+									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+								</div>
+							</div>
+							<div class="desc-grid">
+								<h3>Download Free HTML5 Template</h3>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 animate-box blog">
+						<a href="#" class="entry">
+							<div class="blog-bg" style="background-image: url(libs/solid/images/blog-2.jpg);">
+								<div class="date">
+									<span>01</span>
+									<small>Mar</small>
+								</div>
+								<div class="desc">
+									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+								</div>
+							</div>
+							<div class="desc-grid">
+								<h3>Download Free HTML5 Template</h3>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 animate-box blog">
+						<a href="#" class="entry">
+							<div class="blog-bg" style="background-image: url(libs/solid/images/blog-3.jpg);">
+								<div class="date">
+									<span>28</span>
+									<small>Feb</small>
+								</div>
+								<div class="desc">
+									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+								</div>
+							</div>
+							<div class="desc-grid">
+								<h3>Download Free HTML5 Template</h3>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-md-4 animate-box blog">
+						<a href="#" class="entry">
+							<div class="blog-bg" style="background-image: url(libs/solid/images/blog-3.jpg);">
+								<div class="date">
+									<span>28</span>
+									<small>Feb</small>
+								</div>
+								<div class="desc">
+									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+								</div>
+							</div>
+							<div class="desc-grid">
+								<h3>Download Free HTML5 Template</h3>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 animate-box blog">
+						<a href="#" class="entry">
+							<div class="blog-bg" style="background-image: url(libs/solid/images/blog-1.jpg);">
+								<div class="date">
+									<span>27</span>
+									<small>Feb</small>
+								</div>
+								<div class="desc">
+									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+								</div>
+							</div>
+							<div class="desc-grid">
+								<h3>Download Free HTML5 Template</h3>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 animate-box blog">
+						<a href="#" class="entry">
+							<div class="blog-bg" style="background-image: url(libs/solid/images/blog-2.jpg);">
+								<div class="date">
+									<span>25</span>
+									<small>Feb</small>
+								</div>
+								<div class="desc">
+									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+								</div>
+							</div>
+							<div class="desc-grid">
+								<h3>Download Free HTML5 Template</h3>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> -->
+
+
+
+
+
+	<!-- jQuery -->
+	<script src="/public/libs/solid/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="/public/solid/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="/public/solid/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="/public/solid/js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="/public/solid/js/jquery.stellar.min.js"></script>
+	<!-- Counters -->
+	<script src="/public/solid/js/jquery.countTo.js"></script>
+	<!-- Main JS (Do not remove) -->
+	<script src="/public/solid/js/main.js"></script>
+
+	</body>
+</html>
+

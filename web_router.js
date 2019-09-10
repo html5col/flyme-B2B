@@ -29,6 +29,8 @@ var router = express.Router();
 
 // home page
 router.get('/', site.index);
+//forum
+router.get('/forum', site.forum);
 // sitemap
 router.get('/sitemap.xml', site.sitemap);
 // mobile app download

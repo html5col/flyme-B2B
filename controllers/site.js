@@ -20,7 +20,20 @@ var _            = require('lodash');
 var moment = require('moment');
 // var util = require("../libs/util");
 
-exports.index = function (req, res, next) {
+exports.index = function (req, res, next){
+  res.render('index', {
+
+    // topics: topics,
+    // list_topic_count: limit,
+    // tops: tops,
+    // no_reply_topics: no_reply_topics,
+    // tab: tab,
+     pageTitle: '135楼 | 专业的英语学习社区',
+   // isMobile: util.isMobile
+  });
+}
+
+exports.forum= function (req, res, next) {
   var page = parseInt(req.query.page, 10) || 1;
   page = page > 0 ? page : 1;
   var tab = req.query.tab || 'all';
@@ -101,7 +114,7 @@ exports.index = function (req, res, next) {
   var tabName = renderHelper.tabName(tab);
   proxy.all('topics', 'tops', 'no_reply_topics', 'pages',
     function (topics, tops, no_reply_topics, pages) {
-      res.render('index', {
+      res.render('forum', {
         topics: topics,
         current_page: page,
         list_topic_count: limit,

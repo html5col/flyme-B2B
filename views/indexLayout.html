@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <!-- meta -->
+  <meta charset="utf-8"/>
+  <meta name='description' content='<%= config.description %>'>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="keywords" content="<%= config.keywords %>"/>
+  <!-- see http://smerity.com/articles/2013/where_did_all_the_http_referrers_go.html -->
+  <meta name="referrer" content="always">
+
+  <%
+  var headers = config.site_headers || [];
+  for (var i = 0, l = headers.length; i < l; i++) {
+  %>
+  <%- headers[i] %>
+  <% } %>
+
+  <link title="RSS" type="application/rss+xml" rel="alternate" href="/rss"/>
+
+  <% if (config.site_icon) { %>
+  <link rel="icon" href="<%- staticFile(config.site_icon) %>" type="image/x-icon"/>
+  <% } %>
+
+  <!-- style -->
+  <%- Loader('/public/libs/solid/css/animate.css')
+  .css('/public/libs/solid/css/icomoon.css')
+  .css('/public/libs/solid/css/simple-line-icons.css')
+  .css('/public/libs/solid/css/bootstrap.css')
+  .css('/public/libs/solid/css/style.css')
+  .done(assets, config.site_static_host, config.mini_assets)
+  %>
+
+  <!-- scripts -->
+  	<!-- Modernizr JS -->
+	<!-- <script src="https://cdn.bootcss.com/modernizr/2010.07.06dev/modernizr.min.js"></script> -->
+  <!-- <%- Loader('/public/index.min.js')
+  .js('/public/libs/solid/js/jquery.min.js')
+  .js('/public/libs/bootstrap/js/bootstrap.min.js')
+  .js('/public/libs/solid/js/jquery.waypoints.min.js')
+  .js('/public/libs/solid/js/jquery.stellar.min.js')
+  .js('/public/libs/solid/js/jquery.countTo.js')
+  .js('/public/libs/solid/js/main.js')
+  .done(assets, config.site_static_host, config.mini_assets)
+  %> -->
+
+  <% if (typeof(topic) !== 'undefined') { %>
+  <title><%= topic.title %> - <%= config.name %></title>
+  <% } else if (typeof(pageTitle) !== 'undefined') { %>
+  <title><%= pageTitle %> - <%= config.name %></title>
+  <% } else { %>
+  <title><%= config.description %></title>
+  <% } %>
+  <meta content="_csrf" name="csrf-param">
+  <meta content="<%= csrf %>" name="csrf-token">
+</head>
+<body>
+<!-- navbar -->
+  <header role="banner" id="fh5co-header">
+      <div class="container">
+        <div class="row">
+          <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="navbar-header">
+              <!-- Mobile Toggle Menu Button -->
+              <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+              <a class="navbar-brand" href="/">135楼.</a> 
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#" data-nav-section="home"><span>主页</span></a></li>
+                <li><a href="#" data-nav-section="services"><span>课程</span></a></li>
+                <!-- <li><a href="#" data-nav-section="explore"><span>Portfolio</span></a></li> -->
+                <li><a href="#" data-nav-section="testimony"><span>评价</span></a></li>
+                <li><a href="#" data-nav-section="pricing"><span>价格</span></a></li>
+                <li><a href="#" data-nav-section="blog"><span>论坛</span></a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+  </header>
+
+
+
+  <%- body %>
+
+	<div id="fh5co-footer" role="contentinfo" style="padding-bottom: 0;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 animate-box">
+					<h3 class="section-title">135楼.</h3>
+					<p>专业的英语综合性学习平台，提供专业的导师，和专业的课程.</p>
+					
+				</div>
+
+				<div class="col-md-4 animate-box">
+					<h3 class="section-title">我们的地址</h3>
+					<ul class="contact-info">
+						<li><i class="icon-map"></i>浙江绍兴越城区胜利西路771号2楼</li>
+						<li><i class="icon-phone"></i>+ 13002632911</li>
+						<li><i class="icon-envelope"></i><a href="#">frank25184@sina.com</a></li>
+						<li><i class="icon-globe"></i><a href="#">www.135lou.com</a></li>
+					</ul>
+					<!-- <h3 class="section-title">与我们联系</h3>
+					<ul class="social-media">
+						<li><a href="#" class="facebook"><i class="icon-facebook"></i></a></li>
+						<li><a href="#" class="twitter"><i class="icon-twitter"></i></a></li>
+						<li><a href="#" class="dribbble"><i class="icon-dribbble"></i></a></li>
+						<li><a href="#" class="github"><i class="icon-github-alt"></i></a></li>
+					</ul> -->
+				</div>
+				<div class="col-md-4 animate-box">
+					<h3 class="section-title">给我们留言咨询</h3>
+					<form class="contact-form">
+						<div class="form-group">
+							<label for="name" class="sr-only">学生姓名</label>
+							<input type="name" class="form-control" id="name" placeholder="学生姓名">
+						</div>
+						<div class="form-group">
+							<label for="number" class="sr-only">手机号码</label>
+							<input type="number" class="form-control" id="number" placeholder="手机号码">
+						</div>
+						<div class="form-group">
+							<label for="message" class="sr-only">留言内容</label>
+							<textarea class="form-control" id="message" rows="7" placeholder="留言内容"></textarea>
+						</div>
+						<div class="form-group">
+							<input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="提交信息">
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<p class="copy-right">&copy;2019  135lou.com. All Rights Reserved. 
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+<% if (config.google_tracker_id) { %>
+<script>
+  // google analytics
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script', "<%- proxy('https://www.google-analytics.com/analytics.js') %>",'ga');
+
+  ga('create', '<%-config.google_tracker_id%>', 'auto');
+  ga('send', 'pageview');
+</script>
+<% } %>
+
+<% if (config.cnzz_tracker_id) { %>
+<div style="display:none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=<%- config.cnzz_tracker_id %>&web_id=<%- config.cnzz_tracker_id %>" language="JavaScript"></script>
+</div>
+<% } %>
+
+
+
+
+	<!-- jQuery -->
+	<script src="/public/libs/solid/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="/public/libs/solid/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="/public/libs/solid/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="/public/libs/solid/js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="/public/libs/solid/js/jquery.stellar.min.js"></script>
+	<!-- Counters -->
+	<script src="/public/libs/solid/js/jquery.countTo.js"></script>
+	<!-- Main JS (Do not remove) -->
+  <script src="/public/libs/solid/js/main.js"></script>
+  
+</body>
+</html>
