@@ -17,7 +17,6 @@ var topic = require('./controllers/topic');
 var reply = require('./controllers/reply');
 var rss = require('./controllers/rss');
 var staticController = require('./controllers/static');
-var en = require('./controllers/en');
 var auth = require('./middlewares/auth');
 var limit = require('./middlewares/limit');
 var github = require('./controllers/github');
@@ -25,6 +24,9 @@ var search = require('./controllers/search');
 var passport = require('passport');
 var configMiddleware = require('./middlewares/conf');
 var config = require('./config');
+
+var en = require('./controllers/en');
+var person = require('./controllers/person');
 
 var router = express.Router();
 
@@ -38,6 +40,7 @@ router.get('/sitemap.xml', site.sitemap);
 
 router.get('/learn/grammar', en.grammar);
 router.get('/online/mistakes', en.mistakes);
+router.get('/tutor/:name', person.intro)
 // router.get('/app/download', site.appDownload);
 
 // sign controller

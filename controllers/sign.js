@@ -69,7 +69,8 @@ exports.signup = function (req, res, next) {
         // 发送激活邮件
         mail.sendActiveMail(email, utility.md5(email + passhash + config.session_secret), loginname);
         res.render('sign/signup', {
-          success: '欢迎加入 ' + config.name + '！我们已给您的注册邮箱发送了一封邮件，请点击里面的链接来激活您的帐号。'
+          // success: '欢迎加入 ' + config.name + '！我们已给您的注册邮箱发送了一封邮件，请点击里面的链接来激活您的帐号。'
+          success: '欢迎加入 ' + config.name + '！现社区只对一部分VIP用户开放，如您已经购买我们的线上或线下VIP课程，注册完成后，请及时联系我们的客服【微信: 13002632911】开通论坛功能。'
         });
       });
 
