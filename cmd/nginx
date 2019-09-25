@@ -1,7 +1,7 @@
 #!/bin/bash
 # clear: if you want to clear the above info in the command
 echo "copying the nignix folders and files..."
-mkdir /var/log/135lou.access.log
+touch /var/log/135lou.access.log
 mkdir /etc/nginx/sites-available
 mkdir /etc/nginx/sites-enabled
 cp -pr /apps/englishlearning/Nginx/* /etc/nginx
