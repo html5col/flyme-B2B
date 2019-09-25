@@ -16,7 +16,7 @@ exports.grammar = function (req, res, next){
       // tops: tops,
       // no_reply_topics: no_reply_topics,
       // tab: tab,
-       pageTitle: '英语语法课程 | 135楼',
+       pageTitle: '英语语法课程',
      // isMobile: util.isMobile
     });
 }

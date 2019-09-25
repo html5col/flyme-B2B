@@ -5,6 +5,7 @@
 let path = require('path');
 let dbUsername = process.env.dbUsername;
 let dbPassword = process.env.dbPassword;
+let mailPass = process.env.mailPass || '0';
 let mongoPort = process.env.mongoPort || 27017;
 console.log(dbUsername, dbPassword,mongoPort);
 
@@ -77,11 +78,11 @@ var config = {
 
   // 邮箱配置
   mail_opts: {
-    host: 'smtp.126.com',
+    host: 'smtp.ym.163.com',
     port: 25,
     auth: {
-      user: 'club@126.com',
-      pass: 'club'
+      user: 'admin@135lou.com',
+      pass: mailPass
     },
     ignoreTLS: true,
   },
@@ -130,10 +131,12 @@ var config = {
 
   // 版块
   tabs: [
-    ['share', '分享'],
-    ['ask', '问答'],
-    ['feedback', '社区反馈'],
-    ['apply', '课程申请']
+    ['share', '词汇'],
+    ['ask', '语法'],
+    ['verbal', '口语']
+    ['listen', '听力']
+    ['feedback', '反馈'],
+
   ],
 
   // 极光推送

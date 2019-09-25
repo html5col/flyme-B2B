@@ -28,7 +28,7 @@ exports.index = function (req, res, next){
     // tops: tops,
     // no_reply_topics: no_reply_topics,
     // tab: tab,
-     pageTitle: '135楼 | 专业的英语学习社区',
+     pageTitle: '专业的英语学习平台,提供完整的英语学习路线图规划',
    // isMobile: util.isMobile
   });
 }

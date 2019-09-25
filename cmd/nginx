@@ -1,0 +1,10 @@
+#!/bin/bash
+# clear: if you want to clear the above info in the command
+echo "copying the nignix folders and files..."
+mkdir /var/log/135lou.access.log
+mkdir /etc/nginx/sites-available
+mkdir /etc/nginx/sites-enabled
+cp -pr /apps/englishlearning/Nginx/* /etc/nginx
+# Create a symbolic link between sites-available and sites-enabled
+ln -s /etc/nginx/sites-available/135lou.conf /etc/nginx/sites-enabled/135lou.conf
+service nginx restart
