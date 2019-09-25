@@ -22,6 +22,7 @@ var sendMail = function (data) {
       if (err) {
         // 写为日志
         logger.error('send mail error', err, data);
+        console.log('send mail error', err, data)
         return done(err);
       }
       return done()

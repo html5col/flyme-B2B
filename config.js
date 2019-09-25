@@ -5,13 +5,13 @@
 let path = require('path');
 let dbUsername = process.env.dbUsername;
 let dbPassword = process.env.dbPassword;
-let mailPass = process.env.mailPass || '0';
+let mailPass = process.env.mailPass || '548331198';
 let mongoPort = process.env.mongoPort || 27017;
 console.log(dbUsername, dbPassword,mongoPort);
 
 var config = {
   // debug 为 true 时，用于本地调试
-  debug: true,
+  debug: false,
 
   get mini_assets() { return !this.debug; }, // 是否启用静态文件的合并压缩，详见视图中的Loader
 
@@ -84,7 +84,7 @@ var config = {
       user: 'admin@135lou.com',
       pass: mailPass
     },
-    ignoreTLS: true
+    // ignoreTLS: true
   },
 
   //weibo app key
