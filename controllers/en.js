@@ -20,4 +20,16 @@ exports.grammar = function (req, res, next){
      // isMobile: util.isMobile
     });
 }
+exports.mistakes  = function (req, res, next){
+  res.render('en/mistakes', {
+
+    // topics: topics,
+    // list_topic_count: limit,
+    // tops: tops,
+    // no_reply_topics: no_reply_topics,
+    // tab: tab,
+     pageTitle: '英语在线错题课程',
+   // isMobile: util.isMobile
+  });
+}
   

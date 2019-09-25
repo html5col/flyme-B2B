@@ -16,8 +16,8 @@ var config = {
   get mini_assets() { return !this.debug; }, // 是否启用静态文件的合并压缩，详见视图中的Loader
 
   name: '135楼', // 社区名字
-  description: '135楼：英语学习社区。 以语法教学为特色，兼顾口语听力，并结合线下实体教学点进行教学和指导。是一个真正意义上的英语学习网站。', // 社区的描述
-  keywords: '英语学习, 语法, 听力, 英语语法课, 在线英语课程,线下语法课, 英语口语课程, 英语口语在线课程',
+  description: '135楼 英语学习平台，提供超省心的完整英语学习体系和路线图。并结合线下实体教学体验点进行教学和指导，是一个真正意义上的英语课程体系学习平台。', // 社区的描述
+  keywords: '英语学习, 英语语法, 英语听力, 英语语法课, 在线英语课程, 线下语法课, 英语口语课程, 英语口语在线课程,英语外教课程,外教小班,外教一对一,英语学习路线图',
 
   // 添加到 html head 中的信息
   site_headers: [
@@ -66,7 +66,7 @@ var config = {
 
   // RSS配置
   rss: {
-    title: '135楼：专业的英语学习课程和社区',
+    title: '135楼 | 专业的英语学习社区',
     link: 'http://135lou.com',
     language: 'zh-cn',
     description: '135楼: 提供专业的英语学习课程，和学习社区。',
@@ -84,7 +84,7 @@ var config = {
       user: 'admin@135lou.com',
       pass: mailPass
     },
-    ignoreTLS: true,
+    ignoreTLS: true
   },
 
   //weibo app key
@@ -127,16 +127,16 @@ var config = {
     url: '/public/upload/'
   },
 
-  file_limit: '1MB',
+  file_limit: '2MB',
 
   // 版块
   tabs: [
     ['share', '词汇'],
     ['ask', '语法'],
-    ['verbal', '口语']
-    ['listen', '听力']
-    ['feedback', '反馈'],
-
+    ['verbal', '口语'],
+    ['listen', '听力'],
+    ['mistake', '错题提交'],
+    ['feedback', '反馈']
   ],
 
   // 极光推送

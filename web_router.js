@@ -37,6 +37,7 @@ router.get('/sitemap.xml', site.sitemap);
 // mobile app download
 
 router.get('/learn/grammar', en.grammar);
+router.get('/online/mistakes', en.mistakes);
 // router.get('/app/download', site.appDownload);
 
 // sign controller
