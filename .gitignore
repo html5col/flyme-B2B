@@ -27,3 +27,4 @@ public/upload/*
 package-lock.json
 
 Nginx/sites-available/example.conf
+assets.json
