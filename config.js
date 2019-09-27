@@ -15,13 +15,13 @@ var config = {
 
   get mini_assets() { return !this.debug; }, // 是否启用静态文件的合并压缩，详见视图中的Loader
 
-  name: '135楼', // 社区名字
+  name: '135楼', // 社区名字 
   description: '135楼 英语学习平台，提供超省心的完整英语学习体系和路线图。并结合线下实体教学体验点进行教学和指导，是一个真正意义上的英语课程体系学习平台。', // 社区的描述
   keywords: '英语学习, 英语语法, 英语听力, 英语语法课, 在线英语课程, 线下语法课, 英语口语课程, 英语口语在线课程,英语外教课程,外教小班,外教一对一,英语学习路线图',
 
   // 添加到 html head 中的信息
   site_headers: [
-    '<meta name="author" content="franklee@englishlearning" />'
+    '<meta name="author" content="admin@135lou.com" />'
   ],
   site_logo: '', // default is `name` ' example: /public/images/cnodejs_light.svg'
   site_icon: '', // 默认没有 favicon, 这里填写网址,example: /public/images/cnode_icon_32.png
@@ -92,7 +92,7 @@ var config = {
   weibo_id: 'your_weibo_id',
 
   // admin 可删除话题，编辑标签。把 user_login_name 换成你的登录名
-  admins: { user_login_name: true },
+  admins: { enEnthusiast: true },
 
   //github 登陆的配置
   GITHUB_OAUTH: {
