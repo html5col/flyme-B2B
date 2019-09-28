@@ -164,7 +164,7 @@ exports.put = function (req, res, next) {
     });
     proxy.fail(next);
     User.getUserById(req.session.user._id, proxy.done(function (user) {
-      user.score += 5;
+      user.score += 2;
       user.topic_count += 1;
       user.save();
       req.session.user = user;

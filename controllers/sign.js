@@ -149,12 +149,15 @@ exports.login = function (req, res, next) {
         // 重新发送激活邮件
         mail.sendActiveMail(user.email, utility.md5(user.email + passhash + config.session_secret), user.loginname);
         res.status(403);
-        return res.render('sign/signin', { error: '此帐号还没有被激活，激活链接已发送到 ' + user.email + ' 邮箱，请查收。' });
+        //return res.render('sign/signin', { error: '此帐号还没有被激活，激活链接已发送到 ' + user.email + ' 邮箱，请查收。' });
+
+        return res.render('sign/signin', { error: '此帐号还没有被激活.现社区只对一部分邀请用户和VIP用户开放，如您已经购买我们的线上或线下VIP课程，请及时联系我们的客服【微信: 13002632911】开通论坛功能。' });
+        
       }
       // store session cookie
       authMiddleWare.gen_session(user, res);
       //check at some page just jump to home page
-      var refer = req.session._loginReferer || '/';
+      var refer = req.session._loginReferer || '/bbs';
       for (var i = 0, len = notJump.length; i !== len; ++i) {
         if (refer.indexOf(notJump[i]) >= 0) {
           refer = '/';

@@ -10,6 +10,7 @@ var UserSchema = new Schema({
   loginname: { type: String},
   pass: { type: String },
   email: { type: String},
+  wechat: { type: String},
   url: { type: String },
   profile_image_url: {type: String},
   location: { type: String },
