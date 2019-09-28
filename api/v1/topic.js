@@ -170,7 +170,7 @@ var create = function (req, res, next) {
       });
     });
     UserProxy.getUserById(req.user.id, proxy.done(function (user) {
-      user.score += 5;
+      user.score += 1;
       user.topic_count += 1;
       user.save();
       req.user = user;

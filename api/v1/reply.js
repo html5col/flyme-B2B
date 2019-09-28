@@ -53,7 +53,7 @@ var create = function (req, res, next) {
     }));
 
     User.getUserById(req.user.id, ep.done(function (user) {
-      user.score += 5;
+      user.score += 1;
       user.reply_count += 1;
       user.save();
       ep.emit('score_saved');

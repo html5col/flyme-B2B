@@ -52,7 +52,7 @@ exports.add = function (req, res, next) {
     }));
 
     User.getUserById(req.session.user._id, ep.done(function (user) {
-      user.score += 5;
+      user.score += 1;
       user.reply_count += 1;
       user.save();
       req.session.user = user;
