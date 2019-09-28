@@ -18,6 +18,7 @@ exports.signup = function (req, res, next) {
   var email     = validator.trim(req.body.email).toLowerCase();
   var pass      = validator.trim(req.body.pass);
   var rePass    = validator.trim(req.body.re_pass);
+  let wechat = validator.trim(req.body.wechat);
 
   var ep = new eventproxy();
   ep.fail(next);
@@ -27,7 +28,7 @@ exports.signup = function (req, res, next) {
   });
 
   // 验证信息的正确性
-  if ([loginname, pass, rePass, email].some(function (item) { return item === ''; })) {
+  if ([loginname, pass, rePass, email, wechat].some(function (item) { return item === ''; })) {
     ep.emit('prop_err', '信息不完整。');
     return;
   }
@@ -44,25 +45,30 @@ exports.signup = function (req, res, next) {
   if (pass !== rePass) {
     return ep.emit('prop_err', '两次密码输入不一致。');
   }
+  if (wechat.length < 3) {
+    ep.emit('prop_err', '微信用户名至少需要3个字符。');
+    return;
+  }
   // END 验证信息的正确性
 
 
   User.getUsersByQuery({'$or': [
     {'loginname': loginname},
-    {'email': email}
+    {'email': email},
+    {'wechat': wechat}
   ]}, {}, function (err, users) {
     if (err) {
       return next(err);
     }
     if (users.length > 0) {
-      ep.emit('prop_err', '用户名或邮箱已被使用。');
+      ep.emit('prop_err', '用户名、邮箱或微信已被使用。');
       return;
     }
 
     tools.bhash(pass, ep.done(function (passhash) {
       // create gravatar
       var avatarUrl = User.makeGravatar(email);
-      User.newAndSave(loginname, loginname, passhash, email, avatarUrl, false, function (err) {
+      User.newAndSave(loginname, loginname, passhash, email, wechat,  avatarUrl, false, function (err) {
         if (err) {
           return next(err);
         }
