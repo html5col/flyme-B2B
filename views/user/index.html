@@ -15,7 +15,7 @@
 
       <div class='user_profile'>
         <ul class='unstyled'>
-          <span class='big'><%= user.score %></span>  <a href="https://baike.baidu.com/item/%E7%8B%97%E5%B8%81/4026751?fromtitle=%E7%8B%97%E7%8B%97%E5%B8%81&fromid=14127289&fr=aladdin">狗狗币</a> 
+          <span class='big'><%= user.score * 5 %></span>  <a href="https://baike.baidu.com/item/%E7%8B%97%E5%B8%81/4026751?fromtitle=%E7%8B%97%E7%8B%97%E5%B8%81&fromid=14127289&fr=aladdin">狗狗币</a> 
           <% if (user.collect_topic_count) {%>
           <li>
             <a class='dark' href="/user/<%= user.loginname %>/collections" target='_blank'>

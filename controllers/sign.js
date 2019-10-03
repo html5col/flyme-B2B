@@ -179,7 +179,7 @@ exports.login = function (req, res, next) {
 exports.signout = function (req, res, next) {
   req.session.destroy();
   res.clearCookie(config.auth_cookie_name, { path: '/' });
-  res.redirect('/');
+  res.redirect('/bbs');
 };
 
 exports.activeAccount = function (req, res, next) {
