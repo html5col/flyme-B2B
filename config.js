@@ -111,10 +111,10 @@ var config = {
 
   // 7牛的access信息，用于文件上传
   qn_access: {
-    accessKey: 'your access key',
-    secretKey: 'your secret key',
+    accessKey: 'ts8Rm7sjjE-JhpgS5-LKceImWMOIV7ZRHXyFnq9_dd',
+    secretKey: 'ts8Rm7sjjE-JhpgS5-LKceImWMOIV7ZRHXyFnq9_dd',
     bucket: 'your bucket name',
-    origin: 'http://your qiniu domain',
+    origin: '',
     // 如果vps在国外，请使用 http://up.qiniug.com/ ，这是七牛的国际节点
     // 如果在国内，此项请留空
     uploadURL: 'http://xxxxxxxx',
