@@ -95,7 +95,7 @@ exports.index = function (req, res, next) {
         ep.emit('no_reply_topics', no_reply_topics);
       } else {
         Topic.getTopicsByQuery(
-          { reply_count: 0, tab: {$nin: ['job', 'dev']}},
+          { reply_count: 0, tab: {$nin: ['test', 'feedback']}},
           { limit: 5, sort: '-create_at'},
           ep.done('no_reply_topics', function (no_reply_topics) {
             cache.set('no_reply_topics', no_reply_topics, 60 * 1);

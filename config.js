@@ -131,11 +131,9 @@ var config = {
 
   // 版块
   tabs: [
-    ['share', '词汇'],
-    ['ask', '语法'],
-    ['verbal', '口语'],
-    ['listen', '听力'],
-    ['mistake', '错题提交'],
+    ['grammar', '词汇&语法'],
+    ['verbal', '听力&口语'],
+    ['test', '历年真题'],
     ['feedback', '反馈']
   ],
 
@@ -146,10 +144,10 @@ var config = {
     isDebug: false,
   },
 
-  create_post_per_day: 1000, // 每个用户一天可以发的主题数
-  create_reply_per_day: 1000, // 每个用户一天可以发的评论数
-  create_user_per_ip: 1000, // 每个 ip 每天可以注册账号的次数
-  visit_per_day: 1000, // 每个 ip 每天能访问的次数
+  create_post_per_day: 10, // 每个用户一天可以发的主题数
+  create_reply_per_day: 10, // 每个用户一天可以发的评论数
+  create_user_per_ip: 10, // 每个 ip 每天可以注册账号的次数
+  visit_per_day: 100, // 每个 ip 每天能访问的次数
 };
 
 if (process.env.NODE_ENV === 'test') {

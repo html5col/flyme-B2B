@@ -44,7 +44,7 @@ exports.bbs= function (req, res, next) {
   // 取主题
   var query = {};
   if (!tab || tab === 'all') {
-    query.tab = {$nin: ['job', 'dev']}
+    query.tab = {$nin: ['feedback', 'test']}
   } else {
     if (tab === 'good') {
       query.good = true;
@@ -86,7 +86,7 @@ exports.bbs= function (req, res, next) {
       proxy.emit('no_reply_topics', no_reply_topics);
     } else {
       Topic.getTopicsByQuery(
-        { reply_count: 0, tab: {$nin: ['job', 'dev']}},
+        { reply_count: 0, tab: {$nin: ['feedback', 'test']}},
         { limit: 5, sort: '-create_at'},
         proxy.done('no_reply_topics', function (no_reply_topics) {
           cache.set('no_reply_topics', no_reply_topics, 60 * 1);
